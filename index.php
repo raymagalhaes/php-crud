@@ -6,5 +6,3 @@ $getPeople = $Crud->Select("people", "name", $Where);
 echo "<pre>";
 print_r($getPeople);
 echo "</pre>";
-?>
-<h1>Este é um crud simples com php</h1>
