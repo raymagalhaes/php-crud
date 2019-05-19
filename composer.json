@@ -1,10 +1,14 @@
 {
-    "autoload": {
-        "classmap": [
-            "src/"
-        ]
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^8"
-    }
+   "autoload": {
+      "classmap": [
+         "src/"
+      ],
+      "psr-4": {
+         "Crud\\": "class/"
+      }
+
+   },
+   "require-dev": {
+      "phpunit/phpunit": "^8"
+   }
 }

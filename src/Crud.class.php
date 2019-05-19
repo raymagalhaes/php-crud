@@ -7,13 +7,10 @@
 *@author Ray Magalhães <rayfsd@gmail.com>
 *@version 0.1
 *
-*
 */
 
 class Crud
 {
-    // Instance property for singleton
-    private static $Instance;
     // name of database table
     public $Table;
     // table columns to select
@@ -25,31 +22,17 @@ class Crud
     // Where Clause to find (must be array)
     private $Where;
     //PDO Class
-    private $pdo;
+    private $Pdo;
+    //returned matrix of data
+    public $Return;
 
-    private function __construct()
+    public function __construct()
     {
         try {
-            $this->pdo = new PDO("mysql:host=localhost;dbname=testDatabase;charset=utf8mb4", "dbusername", "dbpassword");
+            $this->Pdo = new PDO("mysql:host=localhost;dbname=testDatabase;charset=utf8mb4", "dbusername", "dbpassword");
         } catch (PDOException $e) {
             error_log($e->getMessage());
         }
-    }
-
-    private function __clone()
-    {
-    }
-
-    private function __wakeup()
-    {
-    }
-
-    public static function getInstance()
-    {
-        if (self::$Instance === null) {
-            self::$Instance = new self;
-        }
-        return self::$Instance;
     }
 
     public function Select($Table, $Cols = "*", $Where = [])
@@ -66,9 +49,13 @@ class Crud
         } else {
             $Wher = "";
         }
-        $this->Sttmt = $this->pdo->prepare("SELECT {$this->Cols} FROM {$this->Table} {$Wher}");
+        $this->Sttmt = $this->Pdo->prepare("SELECT {$this->Cols} FROM {$this->Table} {$Wher}");
         $this->Sttmt->execute($this->Where);
-        return $this->Sttmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!empty($this->Sttmt->errorInfo()[1])) {
+            return print_r($this->Sttmt->errorInfo(), true);
+        } else {
+            return $this->Sttmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 
     public function Insert($Table, $Data)
