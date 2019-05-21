@@ -29,7 +29,11 @@ class Crud
     public function __construct()
     {
         try {
-            $this->Pdo = new PDO("mysql:host=localhost;dbname=testDatabase;charset=utf8mb4", "dbusername", "dbpassword");
+            $this->Pdo = new PDO(
+                "mysql:host=localhost;dbname=testDatabase;charset=utf8mb4",
+                "dbusername",
+                "dbpassword"
+            );
         } catch (PDOException $e) {
             error_log($e->getMessage());
         }

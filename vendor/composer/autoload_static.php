@@ -60,7 +60,7 @@ class ComposerStaticInit16b2bffdb25110663300fd911d5837d6
         ),
         'Crud\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/class',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
