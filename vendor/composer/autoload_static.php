@@ -24,14 +24,14 @@ class ComposerStaticInit16b2bffdb25110663300fd911d5837d6
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
+        'R' => 
+        array (
+            'Ray\\' => 4,
+        ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
-        ),
-        'C' => 
-        array (
-            'Crud\\' => 5,
         ),
     );
 
@@ -50,6 +50,10 @@ class ComposerStaticInit16b2bffdb25110663300fd911d5837d6
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Ray\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -57,10 +61,6 @@ class ComposerStaticInit16b2bffdb25110663300fd911d5837d6
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
-        'Crud\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
@@ -75,7 +75,6 @@ class ComposerStaticInit16b2bffdb25110663300fd911d5837d6
     );
 
     public static $classMap = array (
-        'Crud' => __DIR__ . '/../..' . '/src/Crud.class.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -632,6 +631,9 @@ class ComposerStaticInit16b2bffdb25110663300fd911d5837d6
         'Prophecy\\Prophet' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Prophet.php',
         'Prophecy\\Util\\ExportUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php',
         'Prophecy\\Util\\StringUtil' => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy/Util/StringUtil.php',
+        'Ray\\Crud' => __DIR__ . '/../..' . '/src/Crud.php',
+        'Ray\\CrudException' => __DIR__ . '/../..' . '/src/CrudException.php',
+        'Ray\\OldCrud' => __DIR__ . '/../..' . '/src/OldCrud.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
