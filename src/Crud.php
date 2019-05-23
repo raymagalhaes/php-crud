@@ -80,7 +80,7 @@ class Crud
         }
         $Parsed = $this->parseInsertArray($Data);
 
-        $sql = "INSERT INTO {$Table} {$Parsed->vString} ALUES {$Parsed->vGroups}";
+        $sql = "INSERT INTO {$Table} {$Parsed->vString} VALUES {$Parsed->vGroups}";
         $this->prest = $this->Pdo->prepare($sql);
 
         try {

@@ -22,4 +22,9 @@ try {
 } catch (CrudException $e) {
     error_log($e);
 }
+if ($Insert) {
+    echo "Great!";
+} else {
+    echo "Fail!";
+}
 echo "</pre>";
